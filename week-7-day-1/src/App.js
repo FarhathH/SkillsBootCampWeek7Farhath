@@ -7,13 +7,14 @@ function App() {
 
   //list and background for colours
   const[colourList, SetColourList]=useState(["black", "hotpink", "blue", "orange", "limegreen", "red"]);
+  //applied an useState function for changing the background
   const[backGround, setBackGround]=useState('#282c34');
 
 
 
   return (
     <div className="App">
-      <header className="App-header" style = {{backgroundColor:backGround}}> {/*background colour is set to */}
+      <header className="App-header" style = {{backgroundColor:backGround}}> {/*applied the props object for the background colour */}
 
         {colourList.map((col)=>{
           return(
