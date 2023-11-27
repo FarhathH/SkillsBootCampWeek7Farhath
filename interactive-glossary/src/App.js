@@ -29,32 +29,38 @@ function App() {
       }
     ]
   );
-  let exampleItem = {
-      title:"Sequencing",
-      description:"The coding flow that determines the flow of the program"
-    }
+  
+  //stores the title and description objects
+  const[selectedItem, setSelectedItem] = useState({title:"", description:""})
+
+  function OnButtonClick(index){
+    setSelectedItem(concepts[index])
+  }
 
   return (
     <div className="App">
       <header className="App-header">
-      <div className = "border">
-        <div className = "info">
-          <div className = "info-container">
-            <div className = "paragraph"></div>
-            <img className = "pic"></img>
+        <div className = "border">
+          <div className = "info">
+            <div className = "info-container">
+              <div className = "paragraph">
+                <h2>{selectedItem.title}</h2>
+                <p>{selectedItem.description}</p>
+              </div>
+              <img className = "pic"></img>
+            </div>
+          </div>
+          <div className = "btn-menu">
+            {concepts.map((btn, index)=>{ //iterating buttons with parameters
+              return(
+                <>
+                  <GlossaryButton name = {btn.title} action = {OnButtonClick} index = {index}/> {/*a click calls the index of the title and description*/}
+                </>
+              );
+            })}
+            
           </div>
         </div>
-        <div className = "btn-menu">
-          {concepts.map((btn)=>{ //iterating buttons
-            return(
-              <>
-                <GlossaryButton name = {btn.title}/>
-              </>
-            );
-          })}
-          
-        </div>
-      </div>
       </header>
     </div>
   );
