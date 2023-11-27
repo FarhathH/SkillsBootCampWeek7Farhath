@@ -7,7 +7,7 @@ function App() {
 
   //list and background for colours
   const[colourList, SetColourList]=useState(["black", "hotpink", "blue", "orange", "limegreen", "red"]);
-  //applied an useState function for changing the background
+  //created an useState function for changing the background
   const[backGround, setBackGround]=useState('#282c34');
 
 
@@ -19,7 +19,7 @@ function App() {
         {colourList.map((col)=>{
           return(
             <div>
-              <ColourButton colour = {col} newColorBackground = {setBackGround}/> {/*changes background when button is clicked*/}
+              <ColourButton colour = {col} newColorBackground = {setBackGround}/> {/*changes background when button is clicked by referencing the useState function*/}
             </div>
           );
         })}
