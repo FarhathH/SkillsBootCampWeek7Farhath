@@ -8,7 +8,7 @@ function ColourButton(props){ //function for the button
    
    {/*this is executed on the page*/}
     return(
-        //onclick function using the props object to change the colour of the background
+        //onclick function using the props object to change the colour of the background each time the user clicks a button
         <div> 
             <button className = "btn" style = {{backgroundColor:col}} onClick={()=>{props.newColorBackground(col)}}>
                 {col}
