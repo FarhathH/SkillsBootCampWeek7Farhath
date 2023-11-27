@@ -1,22 +1,23 @@
 import {useState} from "react";//allowing us to use useState function
 import './ColourButton.css'//my stylesheet
 
-function ColourButton(){ //function for the button
+function ColourButton(props){ //function for the button
 
     
-    const[col, setCol] = useState(["black", "hotpink", "blue", "orange", "limegreen", "red"]);
+    const[col, setCol] = useState(props.colour);
+
+    function buttonClick(){
+        return(
+            <header style = {{backgroundColor:col}}></header>
+        );
+    };
 
     return(
         
-        <div>
-            {col.map((colour)=>{
-                return(
-                    <button className = "btn" style = {{backgroundColor:colour}}>
-                        {colour}
-                    </button>
-                );
-            })}
-            
+        <div> 
+            <button onClick={buttonClick} className = "btn" style = {{backgroundColor:col}}>
+                {col}
+            </button>    
         </div>
     );
 
