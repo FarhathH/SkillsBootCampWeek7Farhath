@@ -5,6 +5,8 @@
     border-radius:10px;
     padding:px;
     transition: 1s;
+    border:5px solid white;
+    color:white;
 }
 
 .btn:hover{ /*for when cursor hover over the button*/
