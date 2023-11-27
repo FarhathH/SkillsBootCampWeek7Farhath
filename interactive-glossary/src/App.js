@@ -7,14 +7,32 @@ import GlossaryButton from './glossary-button';
 function App() {
   
   //array for iterating the button names and info
-  const[buttonNames, setButtonNames] = useState([
-    {name:"Sequencing",
-    description:"Coding in the order that you want your code to run in"},
-    {name:"Selection",
-    description:""}, 
-    {name:"Iteration"},
-    {name:"String"}]);
-
+  const[buttonNames, setButtonNames] = useState(["Sequencing", "Selection", "Iteration", "String"]);
+  //array for objects to display on the left side of web page
+  const[concepts, setConcepts] = useState(
+    [
+      {
+        title:"Sequencing",
+        description: "the coding that determines the logical flow of the program."
+      },
+      {
+        title:"Selection",
+        description:"The second control structure. Selectively executing a block of code depending on whether the condition is true or not."
+      },
+      {
+        title: "Iteration",
+        description:"The third control structure. Continuously executing a block of code if the condition is true."
+      },
+      {
+        title:"String",
+        description:"The data type that stores mutiple characters."
+      }
+    ]
+  );
+  let exampleItem = {
+      title:"Sequencing",
+      description:"The coding flow that determines the flow of the program"
+    }
 
   return (
     <div className="App">
@@ -27,10 +45,10 @@ function App() {
           </div>
         </div>
         <div className = "btn-menu">
-          {buttonNames.map((btn)=>{
+          {concepts.map((btn)=>{ //iterating buttons
             return(
               <>
-                <GlossaryButton name = {btn.name}/>
+                <GlossaryButton name = {btn.title}/>
               </>
             );
           })}

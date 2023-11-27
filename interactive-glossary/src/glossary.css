@@ -48,7 +48,8 @@
     background-color: blue;
     display: flex;
     flex-direction: column;
-    
+    flex-flow: column;
+    overflow-y: scroll;
 }
 
 .btn{ /*button design*/
