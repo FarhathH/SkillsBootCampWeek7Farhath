@@ -1,4 +1,14 @@
-.btn{
-    height:50px;
-    width:60px;
+.btn{ /*For the button look*/
+    height:12.5vh;
+    width:30vw;
+    margin:10px;
+    border-radius:10px;
+    padding:px;
+    transition: 1s;
+}
+
+.btn:hover{ /*for when cursor hover over the button*/
+    box-shadow: inset 5px 5px 15px 15px white;
+    transition: 1s;
+    cursor: pointer;
 }
