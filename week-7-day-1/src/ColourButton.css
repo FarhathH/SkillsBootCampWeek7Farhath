@@ -1,6 +1,12 @@
+.row-ur-boat{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+}
+
 .btn{ /*For the button look*/
     height:12.5vh;
-    width:30vw;
+    width:7.5vw;
     margin:10px;
     border-radius:10px;
     padding:px;

@@ -15,15 +15,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header" style = {{backgroundColor:backGround}}> {/*applied the props object for the background colour */}
-
-        {colourList.map((col)=>{
-          return(
-            <div>
-              <ColourButton colour = {col} newColorBackground = {setBackGround}/> {/*changes background when button is clicked by referencing the useState function*/}
-            </div>
-          );
-        })}
-        
+        <div className = "row-ur-boat">
+          {colourList.map((col)=>{
+            return(
+              <div className = "row-ur-boat">
+                <ColourButton colour = {col} newColorBackground = {setBackGround}/> {/*changes background when button is clicked by referencing the useState function*/}
+              </div>
+            );
+          })}
+        </div>
       </header>
     </div>
   );
