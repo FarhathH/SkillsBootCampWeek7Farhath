@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import './glossary.css';
 import {useState} from 'react';
-import GlossaryButton from './glossary-button';
+import GlossaryButton from './glossary-button'; //imported the function from the jsx file
 
 //imported my images from my file to be put in an array.
 import sequence from './images/sequencing.jpg';
@@ -14,8 +14,9 @@ function App() {
   
   //array for iterating the button names and info
   const[buttonNames, setButtonNames] = useState(["Sequencing", "Selection", "Iteration", "String"]);
+
   //array for objects to display on the left side of web page
-  //have also inserted
+  //have also inserted images in the array to display
   const[concepts, setConcepts] = useState(
     [
       {
@@ -44,28 +45,29 @@ function App() {
   //stores the title and description objects
   const[selectedItem, setSelectedItem] = useState({title:"", description:"", picture:""})
 
+  //executes when the user clicks a button
   function OnButtonClick(index){
     setSelectedItem(concepts[index])
   }
 
-  return (
+  return ( //this runs on the webpage
     <div className="App">
       <header className="App-header">
         <div className = "border">
           <div className = "info">
             <div className = "info-container">
-              <div className = "paragraph">
+              <div className = "paragraph"> {/*contains the heading and description*/}
                 <h2 className = "title">{selectedItem.title}</h2>
                 <p className = "describe">{selectedItem.description}</p>
               </div>
               <div className = "pic">
-                <img width = "90%" height = "90%" src = {selectedItem.picture}></img> {/**/}
+                <img width = "90%" height = "90%" src = {selectedItem.picture}/> {/*added in the image*/}
               </div>
             </div>
           </div>
-          <div className = "line">
-              <div className = "barrier"></div> {/*creates a barrier separating the info and button menu*/}
-            </div>
+          
+          <div className = "barrier"></div> {/*creates a barrier separating the info and button menu*/}
+          
           <div className = "btn-menu">
             {concepts.map((btn, index)=>{ //iterating buttons and info with parameters
               return(
