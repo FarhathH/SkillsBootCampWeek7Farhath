@@ -96,7 +96,7 @@
     margin:16px;
     border-radius: 10%;
     background-color: beige;
-    border:8px solid white;
+    border:none;
     transition: 0.5s;
     font-size:15px;
     

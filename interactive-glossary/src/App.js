@@ -50,10 +50,10 @@ function App() {
   const[selectedItem, setSelectedItem] = useState({title:"", description:"", picture:""})
 
   //executes when the user clicks a button
-  // function OnButtonClick(index){
-  //   setSelectedItem(concepts[index])
+  function OnButtonClick(index){
+    setSelectedItem(concepts[index])
 
-  // }
+  }
 
   //triggered via mouse click
   function NextItem(){
@@ -63,7 +63,7 @@ function App() {
     if(index < concepts.length){ //changing the index depending on the condition
       setSelectedItem(concepts[index])
     }else{
-      setSelectedItem(concepts[0])
+      setSelectedItem(concepts[0]) //goes back to the first button when index exceeds the array length.
     }
     
   }
@@ -75,14 +75,18 @@ function App() {
           <div className = "info">
             <div className = "info-container">
               <div className = "paragraph"> {/*contains the heading and description*/}
-                <h2 className = "title"> <u className = "under-line">{selectedItem.title}</u></h2>
-                <p className = "describe">{selectedItem.description}</p>
+                <h2 className = "title"> <u className = "under-line">
+                  {selectedItem.title}</u>
+                </h2>
+                <p className = "describe">
+                  {selectedItem.description}
+                </p>
               </div>
               <div className = "pic">
-                <img width = "90%" height = "90%" src = {selectedItem.picture}/> {/*added in the image*/}
+                  <img width = "90%" height = "90%" src = {selectedItem.picture}/> {/*added in the image*/}
               </div>
               <div className = "prof-layout">
-                  <button onClick = {NextItem} className = "prof-btn">Next</button>
+                  <button onClick = {NextItem} className = "prof-btn">Next</button> {/*button for loading the next page*/}
               </div>
             </div>
           </div>
@@ -93,7 +97,7 @@ function App() {
             {concepts.map((btn, index)=>{ //iterating buttons and info with parameters
               return(
                 <>
-                  <GlossaryButton name = {btn.title}  index = {index}/> {/*a click calls the index of the title and description*/}
+                  <GlossaryButton name = {btn.title} action = {OnButtonClick} index = {index}/> {/*a click calls the index of the title and description*/}
                 </>
               );
             })}
