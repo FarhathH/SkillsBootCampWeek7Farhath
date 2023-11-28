@@ -14,6 +14,8 @@ function App() {
   
   //array for iterating the button names and info
   const[buttonNames, setButtonNames] = useState(["Sequencing", "Selection", "Iteration", "String"]);
+  
+  const[selectedConcept, setSelectedConcept] = useState("");
 
   //array for objects to display on the left side of web page
   //have also inserted images in the array to display
@@ -21,24 +23,26 @@ function App() {
     [
       {
         title:"Sequencing",
-        description: "the coding that determines the logical flow of the program.",
+        description: `The coding that determines the logical flow of the program.`,
         picture:sequence
       },
       {
         title:"Selection",
-        description:"The second control structure. Selectively executing a block of code depending on whether the condition is true or not.",
+        description:`The second control structure. Selectively executing a 
+        block of code depending on whether the condition is true or not.`,
         picture:selection
       },
       {
         title: "Iteration",
-        description:"The third control structure. Continuously executing a block of code if the condition is true.",
+        description:`The third control structure. Continuously executing a
+        block of code if the condition is true.`,
         picture:iteration
       },
       {
-        title:"String",
-        description:"The data type that stores mutiple characters.",
+        title:"Variable",
+        description:`A piece of data that stores information.`,
         picture:string
-      }
+      },
     ]
   );
   
@@ -46,8 +50,22 @@ function App() {
   const[selectedItem, setSelectedItem] = useState({title:"", description:"", picture:""})
 
   //executes when the user clicks a button
-  function OnButtonClick(index){
-    setSelectedItem(concepts[index])
+  // function OnButtonClick(index){
+  //   setSelectedItem(concepts[index])
+
+  // }
+
+  //triggered via mouse click
+  function NextItem(){
+    //to get the current index
+    let index = concepts.indexOf(selectedItem) + 1
+
+    if(index < concepts.length){ //changing the index depending on the condition
+      setSelectedItem(concepts[index])
+    }else{
+      setSelectedItem(concepts[0])
+    }
+    
   }
 
   return ( //this runs on the webpage
@@ -57,11 +75,14 @@ function App() {
           <div className = "info">
             <div className = "info-container">
               <div className = "paragraph"> {/*contains the heading and description*/}
-                <h2 className = "title">{selectedItem.title}</h2>
+                <h2 className = "title"> <u className = "under-line">{selectedItem.title}</u></h2>
                 <p className = "describe">{selectedItem.description}</p>
               </div>
               <div className = "pic">
                 <img width = "90%" height = "90%" src = {selectedItem.picture}/> {/*added in the image*/}
+              </div>
+              <div className = "prof-layout">
+                  <button onClick = {NextItem} className = "prof-btn">Next</button>
               </div>
             </div>
           </div>
@@ -72,7 +93,7 @@ function App() {
             {concepts.map((btn, index)=>{ //iterating buttons and info with parameters
               return(
                 <>
-                  <GlossaryButton name = {btn.title} action = {OnButtonClick} index = {index}/> {/*a click calls the index of the title and description*/}
+                  <GlossaryButton name = {btn.title}  index = {index}/> {/*a click calls the index of the title and description*/}
                 </>
               );
             })}

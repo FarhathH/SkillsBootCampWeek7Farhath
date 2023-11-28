@@ -2,7 +2,8 @@
     border:5px solid grey;
     height:100vh;
     width:95vw;
-    padding:8px;
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
 
@@ -10,8 +11,10 @@
 
 .info{ /*section containing info*/
     /* background-color: aqua; */
+    display:flex;
+    flex:0.75;
     height: 95vh;
-    width:60vw;
+   
 }
 
 .info-container{ /*padded section*/
@@ -27,11 +30,14 @@
 .paragraph{ /*contains paragraph*/
     /* border:5px solid pink;
     background-color: pink; */
+    display:flex;
+    flex-direction: column;
+    flex:0.5;
     border-radius: 20%;
     height:40%;
     width:95%;
     margin-top:24px;
-    margin-left: 8px;
+    margin-left:24px;
     color:black;
     font-size: 12.5px;
     align-items: center;
@@ -43,21 +49,26 @@
 .pic{ /*contains screenshot example*/
     /* border:5px solid pink;
     background-color: pink; */
+    display:flex;
+    flex:0.5;
     border-radius: 20%;
     height:40%;
     width:95%;
-    margin:8px;
+    margin:24px;
+    align-items: center;
 }
 
-/* .line{
-    display:flex;
-    flex-direction: row;
-} */
+.padding{
+    padding:16px;
+}
+
+
 .btn-menu{ /*for button layout*/
-    height:95vh;
-    width:37vh;
+    height:100%;
+    
     /* background-color: blue; */
     display: flex;
+    flex:0.25;
     flex-direction: column;
     flex-flow: column;
     overflow-y: scroll;
@@ -85,15 +96,42 @@
     margin:16px;
     border-radius: 10%;
     background-color: beige;
-    border:none;
+    border:8px solid white;
     transition: 0.5s;
+    font-size:15px;
+    
+}
+
+.webkit-scrollbar-thumb{
+    background-color: blue;
     
 }
 
 .btn:hover{ /*hover effect for button*/
-    box-shadow: inset 8px 8px 50px 50px black;
+    box-shadow: inset 8px 8px 50px 50px grey;
     scale:110%;
     transition:0.5s;
     cursor:pointer;
+    
+
+}
+
+.prof-layout{
+    display:flex;
+    margin-left:170px;
+    text-align: center;
+    align-items: center;
+    
+}
+.prof-btn{
+    background-color: turquoise;
+    color:white;
+    font-size:200%;
+    border:none;
+}
+.prof-btn:hover{
+    
+    cursor:pointer;
+    box-shadow: inset 2px 2px 8px 8px aqua;
 
 }
