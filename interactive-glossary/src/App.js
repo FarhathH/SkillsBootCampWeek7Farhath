@@ -3,6 +3,7 @@ import './App.css';
 import './glossary.css';
 import {useState} from 'react';
 import GlossaryButton from './glossary-button.jsx'; //imported the function from the jsx file
+import GlossaryInfo from './glossary-info.jsx';
 
 //imported my images from my file to be put in an array.
 //will be used as an alias
@@ -61,7 +62,8 @@ function App() {
   //stores the title and description objects
   const[selectedItem, setSelectedItem] = useState(concepts[0])
   
-  
+  //useState for counter
+  const[counter, setCounter] = useState(0);
   
   
   //executes when the user clicks a button
@@ -80,6 +82,14 @@ function App() {
     temp[index].complete = true
     console.log(temp)
     setConcepts(temp)
+
+    
+
+    if(counter < concepts.length){
+      setCounter(counter+1) //increase counter
+    }else{
+      setCounter(counter-5) //resets counter
+    }
    
     
 
@@ -91,6 +101,7 @@ function App() {
       
     }else{
       setSelectedItem(concepts[0]) //goes back to the first button when index exceeds the array length.
+      
     }
     
   }
@@ -98,29 +109,21 @@ function App() {
   return ( //this runs on the webpage
     <div className="App">
       <header className="App-header">
+
         <div className = "border">
+
           <div className = "info">
-            <div className = "info-container">
-              <div className = "paragraph"> {/*contains the heading and description*/}
-                <h2 className = "title"> <u className = "under-line">
-                  {selectedItem.title}</u>
-                </h2>
-                <p className = "describe">
-                  {selectedItem.description}
-                </p>
-              </div>
-              <div className = "pic">
-                  <img width = "90%" height = "90%" src = {selectedItem.picture}/> {/*added in the image*/}
-              </div>
-              <div className = "prof-layout">
-                  <button onClick = {NextItem} className = "prof-btn">Next</button> {/*button for loading the next page*/}
-              </div>
-            </div>
+            <GlossaryInfo 
+              title = {selectedItem.title}
+              info = {selectedItem.description}
+              pic = {selectedItem.picture}
+              button = {NextItem}
+            />
           </div>
           
-          <div className = "barrier"></div> {/*creates a barrier separating the info and button menu*/}
-          
           <div className = "btn-menu">
+
+            <div style = {{color:"black"}} className = "counter">{counter}/{concepts.length}</div>
             {concepts.map((btn, index)=>{ //iterating buttons and info with parameters
               return(
                 <>
@@ -134,6 +137,7 @@ function App() {
             })}
             
           </div>
+
         </div>
       </header>
     </div>

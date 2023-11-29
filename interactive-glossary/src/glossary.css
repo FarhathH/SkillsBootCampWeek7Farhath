@@ -58,6 +58,10 @@
     align-items: center;
 }
 
+.img{
+    border: 10px solid grey; 
+}
+
 .padding{
     padding:16px;
 }
@@ -73,6 +77,10 @@
     flex-flow: column;
     overflow-y: scroll;
     margin-left: 16px;
+}
+
+.counter{ /*for the counter in the top-right corner*/
+    border-bottom:5px solid grey;
 }
 .title{ /*for the heading*/
      margin-top: 16px;
