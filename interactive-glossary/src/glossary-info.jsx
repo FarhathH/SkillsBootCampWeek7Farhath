@@ -9,10 +9,10 @@ function GlossaryInfo(props){
             <div className = "info-container">
                 <div className = "paragraph"> {/*contains the heading and description*/}
                     <h2 className = "title"> <u className = "under-line">
-                    {props.title}</u>
+                        {props.title}</u>
                     </h2>
                     <p className = "describe">
-                    {props.info}
+                        {props.info}
                     </p>
                 </div>
                 <div className = "pic">

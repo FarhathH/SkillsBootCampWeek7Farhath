@@ -8,6 +8,7 @@ import './glossary-button.css';
 import {useState} from 'react';
 import GlossaryButton from './glossary-button.jsx'; //imported the function from the jsx file
 import GlossaryInfo from './glossary-info.jsx';
+import NewFileAdd from './new-file.jsx';
 
 //imported my images from my file to be put in an array.
 //will be used as an alias
@@ -117,12 +118,14 @@ function App() {
         <div className = "border">
 
           <div className = "info">
-            <GlossaryInfo 
+            {/* <GlossaryInfo 
               title = {selectedItem.title}
               info = {selectedItem.description}
               pic = {selectedItem.picture}
               button = {NextItem}
-            />
+            /> */}
+
+            <NewFileAdd/>
           </div>
           
           <div className = "btn-menu">
