@@ -128,10 +128,13 @@
     color:white;
     font-size:200%;
     border:none;
+    transition: 1s;
 }
 .prof-btn:hover{
     
     cursor:pointer;
-    box-shadow: inset 2px 2px 8px 8px aqua;
+    box-shadow: inset 2px 2px 8px 8px blue;
+    scale:110%;
+    transition: 1s;
 
 }
