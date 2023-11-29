@@ -75,7 +75,7 @@ function App() {
     //to get the current index
     let index = concepts.indexOf(selectedItem)
 
-     //setting the complete field of the last item.
+     //set up the variables for the bool value in the concepts array.
     let temp = [...concepts]
     temp[index].complete = true
     console.log(temp)
@@ -127,7 +127,7 @@ function App() {
                   <GlossaryButton name = {btn.title} 
                     action = {OnButtonClick} 
                     index = {index}
-                    complete = {btn.complete}
+                    complete = {btn.complete} //this is called on the function render to that the 'complete' object can change to true with a button click.
                   /> {/*a click calls the index of the title and description*/}
                 </>
               );
