@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import './glossary.css';
+
+//my stylesheets
+import './glossary-info.css';
+import './glossary-button.css';
+
 import {useState} from 'react';
 import GlossaryButton from './glossary-button.jsx'; //imported the function from the jsx file
 import GlossaryInfo from './glossary-info.jsx';

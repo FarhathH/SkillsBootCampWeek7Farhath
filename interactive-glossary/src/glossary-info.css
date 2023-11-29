@@ -66,22 +66,6 @@
     padding:16px;
 }
 
-
-.btn-menu{ /*for button layout*/
-    height:100%;
-    
-    /* background-color: blue; */
-    display: flex;
-    flex:0.25;
-    flex-direction: column;
-    flex-flow: column;
-    overflow-y: scroll;
-    margin-left: 16px;
-}
-
-.counter{ /*for the counter in the top-right corner*/
-    border-bottom:5px solid grey;
-}
 .title{ /*for the heading*/
      margin-top: 16px;
 }
@@ -93,56 +77,8 @@
 .barrier{ /*for the barrier separating the info container and the button menu*/
     border:8px solid grey;
     margin-left:16px;
-    margin-top: -16px;
-    height: 102vh;
+    margin-top: -18px;
+    height: 98vh;
 
 }
 
-.btn{ /*button design*/
-    height:50%;
-    width:89%;
-    margin:16px;
-    border-radius: 10%;
-    background-color: beige;
-    border:5px solid pink;
-    transition: 0.5s;
-    font-size:15px;
-    
-}
-
-.webkit-scrollbar-thumb{
-    background-color: blue;
-    
-}
-
-.btn:hover{ /*hover effect for button*/
-    box-shadow: inset 8px 8px 50px 50px hotpink;
-    scale:110%;
-    transition:0.5s;
-    cursor:pointer;
-    
-
-}
-
-.prof-layout{
-    display:flex;
-    margin-left:170px;
-    text-align: center;
-    align-items: center;
-    
-}
-.prof-btn{
-    background-color: turquoise;
-    color:white;
-    font-size:200%;
-    border:none;
-    transition: 1s;
-}
-.prof-btn:hover{
-    
-    cursor:pointer;
-    box-shadow: inset 2px 2px 8px 8px blue;
-    scale:110%;
-    transition: 1s;
-
-}

@@ -1,5 +1,6 @@
 import {useState} from "react";
-import './glossary.css';
+import './glossary-info.css';
+import './glossary-button.css';
 
 
 function GlossaryInfo(props){

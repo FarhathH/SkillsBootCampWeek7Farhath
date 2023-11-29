@@ -1,5 +1,6 @@
-import './glossary.css';
+import './glossary-info.css';
 import {useState} from 'react';
+import './glossary-button.css';
 
 
 
