@@ -89,3 +89,46 @@
 .border{
   align-items: center;
 } */
+
+.add-btn{ /*button for the option of user input*/
+    height:10%;
+    width:10%;
+    margin:16px;
+    border-radius: 100%;
+    background-color: pink;
+    border:5px solid none;
+    transition: 0.5s;
+    font-size:5px;
+}
+
+.add-btn:hover{
+    box-shadow: inset 8px 8px 50px 50px hotpink;
+    scale:110%;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+.prof-layout{
+    display:flex;
+    flex:0.5;
+    margin:10px;
+    text-align: center;
+    align-items: center;
+    
+}
+.prof-btn{
+    margin-left:75px;
+    background-color: turquoise;
+    color:white;
+    font-size:100%;
+    border:none;
+    transition: 1s;
+}
+.prof-btn:hover{
+    
+    cursor:pointer;
+    box-shadow: inset 2px 2px 8px 8px blue;
+    scale:110%;
+    transition: 1s;
+
+}

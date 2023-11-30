@@ -3,6 +3,9 @@ import './glossary-info.css';
 import './glossary-button.css';
 
 
+import AddInfoButton from "./newConceptButton";
+
+
 function GlossaryInfo(props){
     return(
         <>
@@ -20,10 +23,15 @@ function GlossaryInfo(props){
                 </div>
                 <div className = "prof-layout">
                     <button onClick = {props.button} className = "prof-btn">Next</button> {/*button for loading the next page*/}
+                    <AddInfoButton/>
                 </div>
+                
             </div>
-
             <div className = "barrier"></div> {/*creates a barrier separating the info and button menu*/}
+
+            
+
+            
         </>
     );
 }

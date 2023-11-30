@@ -5,10 +5,14 @@ import './App.css';
 import './glossary-info.css';
 import './glossary-button.css';
 
+
 import {useState} from 'react';
+
+//my own imported files
 import GlossaryButton from './glossary-button.jsx'; //imported the function from the jsx file
 import GlossaryInfo from './glossary-info.jsx';
-import NewFileAdd from './new-file.jsx';
+import NewFileAdd from './new-concept.jsx';
+import AddInfoButton from './newConceptButton.jsx';
 
 //imported my images from my file to be put in an array.
 //will be used as an alias
@@ -108,6 +112,12 @@ function App() {
       setSelectedItem(concepts[0]) //goes back to the first button when index exceeds the array length.
       
     }
+
+
+
+    function NewDisplay(){
+
+    }
     
   }
 
@@ -118,6 +128,9 @@ function App() {
         <div className = "border">
 
           <div className = "info">
+
+            
+
             {/* <GlossaryInfo 
               title = {selectedItem.title}
               info = {selectedItem.description}
@@ -126,6 +139,8 @@ function App() {
             /> */}
 
             <NewFileAdd/>
+            
+           
           </div>
           
           <div className = "btn-menu">
