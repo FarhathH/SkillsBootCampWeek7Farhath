@@ -14,7 +14,9 @@ function NewFileAdd(props){
         <>
             <div className = "info-container">
                 <AddInfoButton
-                    togglePage = {props.togglePage} //the button to take us back to the glossary page.
+                    addEntry = {props.togglePage}
+                    title = {insertTitle}
+                    description = {insertDescription}  //the button to take us back to the glossary page.
                 />
                 <div className = "paragraph"> {/*contains the heading and description*/}
                     <h2 className = "title"> 
@@ -22,20 +24,20 @@ function NewFileAdd(props){
                             <h1>Add New</h1> {/*The main title*/}
                             <h1>{insertTitle}</h1> {/*The title insert*/}
                         </u>
-                        
+
                         <p>{insertDescription}</p> {/*The description insert insert*/}
                     </h2>
 
                     <p className = "describe">
                         {/*User can insert info*/}
-                        <textarea onChange = {(e)=>setInsertTitle(e.target.value)} type = "text" placeholder='Concept title' className = "img"/>
+                        <textarea onChange = {(e)=>setInsertTitle(e.target.value)} type = "text" placeholder='Concept title' className = "img"/> {/*stores input*/}
                             
                         
                     </p>
 
                     <p className = "describe">
                         {/*second text box to input info*/}
-                        <textarea onChange = {(e)=>setInsertDescription(e.target.value)} type = "text" placeholder='Description' className = "img"/>
+                        <textarea onChange = {(e)=>setInsertDescription(e.target.value)} type = "text" placeholder='Description' className = "img"/> {/*stores input*/}
     
                     </p>
 

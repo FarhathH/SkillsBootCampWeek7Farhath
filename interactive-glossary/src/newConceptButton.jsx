@@ -6,7 +6,7 @@ import './glossary-button.css';
 function AddInfoButton(props){ //our button for adding
     return(
         
-            <button onClick = {()=>props.togglePage(false)} className = "add-btn">
+            <button onClick = {()=>props.addEntry(props.title,props.description)} className = "add-btn">
                 +
             </button>
         

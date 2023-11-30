@@ -23,10 +23,17 @@ import string from './images/string.jpg';
 import stringInterpolation from './images/string-interpolation.jpg';
 
 function App() {
+
+    //upState for viewing the new concepts page
+    const[addingPrinciple, setAddingPrinciple] = useState(false)
   
   //array for iterating the button names and info
   const[buttonNames, setButtonNames] = useState(["Sequencing", "Selection", "Iteration", "String"]);
   
+ 
+
+  //useState for counter
+  const[counter, setCounter] = useState(0);
 
   //array for objects to display on the left side of web page
   //have also inserted images in the array to display
@@ -71,17 +78,13 @@ function App() {
   //stores the title and description objects
   const[selectedItem, setSelectedItem] = useState(concepts[0])
   
-  //useState for counter
-  const[counter, setCounter] = useState(0);
-  
   
   //executes when the user clicks a button
   function OnButtonClick(index){
     setSelectedItem(concepts[index])
   }
 
-  //upState for viewing the new concepts page
-  const[addingPrinciple, setAddingPrinciple] = useState(false)
+
 
 
 
@@ -119,10 +122,23 @@ function App() {
       
     }
 
-
+   
     
   }
+  function AddEntry(title, description){
+        let newEntry = {
+          title:title,
+          description:description,
+          imgSource: iteration,
+          complete:false
 
+        }
+
+        let temp = [...concepts]
+        temp.push(newEntry)
+        setConcepts(temp)
+        setAddingPrinciple(false)
+  }
   return ( //this runs on the webpage
     <div className="App">
       <header className="App-header">
@@ -133,7 +149,7 @@ function App() {
 
             {addingPrinciple == true && //page will view when condition is true
               <NewFileAdd 
-                togglePage = {setAddingPrinciple}
+                togglePage = {AddEntry}
               />
 
             }
