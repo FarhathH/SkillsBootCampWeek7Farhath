@@ -7,7 +7,7 @@ import './glossary-button.css';
 function GlossaryButton(props){//using props object as a placeholder for array.
 
 
-    return( //function for returning buttons on the webpage
+    return( //function for returning  concept buttons on the webpage
         <>
             <button style = {{backgroundColor:props.complete ? "grey":"beige"}} //set a props condition to change the button colour when clicking the 'next' button
                 className = "btn" onClick = {() => props.action(props.index)}>

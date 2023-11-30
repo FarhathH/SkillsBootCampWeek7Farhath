@@ -23,7 +23,8 @@ function GlossaryInfo(props){
                 </div>
                 <div className = "prof-layout">
                     <button onClick = {props.button} className = "prof-btn">Next</button> {/*button for loading the next page*/}
-                    <AddInfoButton/>
+                    <button onClick = {()=>props.togglePage(true)} className = "prof-btn">Add</button> {/*button for viewing the add new page*/}
+                    
                 </div>
                 
             </div>

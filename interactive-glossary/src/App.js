@@ -83,6 +83,11 @@ function App() {
   //upState for viewing the new concepts page
   const[addingPrinciple, setAddingPrinciple] = useState(false)
 
+
+  //upStates to store data input from user.
+  const[insertTitle, setInsertTitle] = useState('');
+  const[insertDescription, setInsertDescription] = useState('');
+
   //triggered via mouse click
   function NextItem(){
 
@@ -128,16 +133,22 @@ function App() {
 
           <div className = "info">
 
-            {addingPrinciple == true &&
-              <NewFileAdd/>
+            {addingPrinciple == true && //page will view when condition is true
+              <NewFileAdd 
+              togglePage = {setAddingPrinciple}
+              insertTitle = {insertTitle}
+              insertDescription = {insertDescription}
+              />
+
             }
 
-            {addingPrinciple == false &&
+            {addingPrinciple == false && //page will view when the condition is false
               <GlossaryInfo 
                 title = {selectedItem.title}
                 info = {selectedItem.description}
                 pic = {selectedItem.picture}
                 button = {NextItem}
+                togglePage = {setAddingPrinciple}
                 
               />
             }

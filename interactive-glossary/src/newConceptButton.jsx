@@ -3,11 +3,11 @@ import './glossary-info.css';
 import './glossary-button.css';
 
 
-function AddInfoButton(){
+function AddInfoButton(props){ //our button for adding
     return(
         
-            <button className = "prof-btn">
-                Add
+            <button onClick = {()=>props.togglePage(false)} className = "add-btn">
+                +
             </button>
         
     );
