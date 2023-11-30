@@ -80,6 +80,9 @@ function App() {
     setSelectedItem(concepts[index])
   }
 
+  //upState for viewing the new concepts page
+  const[addingPrinciple, setAddingPrinciple] = useState(false)
+
   //triggered via mouse click
   function NextItem(){
 
@@ -114,10 +117,6 @@ function App() {
     }
 
 
-
-    function NewDisplay(){
-
-    }
     
   }
 
@@ -129,16 +128,21 @@ function App() {
 
           <div className = "info">
 
-            
+            {addingPrinciple == true &&
+              <NewFileAdd/>
+            }
 
-            {/* <GlossaryInfo 
-              title = {selectedItem.title}
-              info = {selectedItem.description}
-              pic = {selectedItem.picture}
-              button = {NextItem}
-            /> */}
+            {addingPrinciple == false &&
+              <GlossaryInfo 
+                title = {selectedItem.title}
+                info = {selectedItem.description}
+                pic = {selectedItem.picture}
+                button = {NextItem}
+                
+              />
+            }
 
-            <NewFileAdd/>
+          
             
            
           </div>
