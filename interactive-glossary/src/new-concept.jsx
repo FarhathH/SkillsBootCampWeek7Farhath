@@ -5,6 +5,11 @@ import AddInfoButton from './newConceptButton';
 
 
 function NewFileAdd(props){
+
+      //upStates to store data input from user.
+    const[insertTitle, setInsertTitle] = useState('');
+    const[insertDescription, setInsertDescription] = useState('');
+
     return(
         <>
             <div className = "info-container">
@@ -15,21 +20,23 @@ function NewFileAdd(props){
                     <h2 className = "title"> 
                         <u className = "under-line">
                             <h1>Add New</h1> {/*The main title*/}
+                            <h1>{insertTitle}</h1> {/*The title insert*/}
                         </u>
+                        
+                        <p>{insertDescription}</p> {/*The description insert insert*/}
                     </h2>
 
                     <p className = "describe">
                         {/*User can insert info*/}
-                        <textarea type = "text" placeholder='Concept title' className = "img">
-                            {props.insertTitle}
-                        </textarea>
+                        <textarea onChange = {(e)=>setInsertTitle(e.target.value)} type = "text" placeholder='Concept title' className = "img"/>
+                            
+                        
                     </p>
 
                     <p className = "describe">
                         {/*second text box to input info*/}
-                        <textarea type = "text" placeholder='Description' className = "img">
-                            {props.insertDescription}
-                        </textarea>
+                        <textarea onChange = {(e)=>setInsertDescription(e.target.value)} type = "text" placeholder='Description' className = "img"/>
+    
                     </p>
 
                     

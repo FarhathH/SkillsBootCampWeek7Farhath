@@ -84,9 +84,7 @@ function App() {
   const[addingPrinciple, setAddingPrinciple] = useState(false)
 
 
-  //upStates to store data input from user.
-  const[insertTitle, setInsertTitle] = useState('');
-  const[insertDescription, setInsertDescription] = useState('');
+
 
   //triggered via mouse click
   function NextItem(){
@@ -135,9 +133,7 @@ function App() {
 
             {addingPrinciple == true && //page will view when condition is true
               <NewFileAdd 
-              togglePage = {setAddingPrinciple}
-              insertTitle = {insertTitle}
-              insertDescription = {insertDescription}
+                togglePage = {setAddingPrinciple}
               />
 
             }
