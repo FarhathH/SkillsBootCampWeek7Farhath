@@ -49,7 +49,7 @@ function NewFileAdd(props){
                 <div className = "new-pic">
 
                     <div className = "new-layout">
-                        <button className = "new-btn">SUBMIT</button> {/*button for submiting what the user input*/}
+                        {/* <button className = "new-btn">SUBMIT</button> button for submiting what the user input */}
                     </div>
                 
                 </div>
